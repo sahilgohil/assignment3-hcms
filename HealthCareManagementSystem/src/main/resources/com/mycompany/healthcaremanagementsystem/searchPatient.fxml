@@ -59,7 +59,7 @@
                         <Insets bottom="10.0" left="10.0" top="10.0" />
                      </padding>
                   </Button>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#updatePatientEvent" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #1a4b77; -fx-border-color: #003768;" text="Update Patient information" textFill="WHITE">
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#updatePatientEvent" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #1a4b77; -fx-border-color: #c1d82f;" text="Update Patient information" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
