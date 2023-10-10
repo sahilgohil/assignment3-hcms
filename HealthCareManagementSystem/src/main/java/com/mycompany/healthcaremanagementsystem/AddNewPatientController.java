@@ -126,7 +126,6 @@ public class AddNewPatientController implements Initializable {
         }
     }
 
-    @FXML
     private void homeBtn(ActionEvent event) {
         App.switchScene("medicalStaffHome.fxml");
     }
@@ -152,6 +151,26 @@ public class AddNewPatientController implements Initializable {
         contactNumberField.setText("");
         medicareCardField.setText("");
         medicalHistoryField.setText("");
+    }
+
+    @FXML
+    private void addPatientEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void updatePatientEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void scheduleAppointmentEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void viewBillsEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void viewAnalyticsDashboardEvent(ActionEvent event) {
     }
 
 
