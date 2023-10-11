@@ -16,10 +16,7 @@ import javafx.scene.text.Text;
  * @author sahil
  */
 public class adminHomeController implements Initializable {
-
-
-    @FXML
-    private Text error;
+    
     /**
      * Initializes the controller class.
      */
@@ -39,9 +36,8 @@ public class adminHomeController implements Initializable {
     }
 
     @FXML
-    private void logoutEvent(ActionEvent event) {
-     
-            App.switchScene("loginPage.fxml");
+    private void logoutEvent(ActionEvent event) {     
+        App.switchScene("loginPage.fxml");
         
     }
 
