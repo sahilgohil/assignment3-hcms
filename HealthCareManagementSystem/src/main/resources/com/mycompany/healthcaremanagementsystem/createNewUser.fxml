@@ -48,7 +48,7 @@
          <left>
             <VBox prefHeight="440.0" prefWidth="220.0" style="-fx-background-color: #1a4b77;" BorderPane.alignment="CENTER">
                <children>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#createNewUserEvent" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #1a4b77; -fx-border-color: #003768;" text="Create New User" textFill="WHITE">
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#createNewUserEvent" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #1a4b77; -fx-border-color: #c1d82f;" text="Create New User" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

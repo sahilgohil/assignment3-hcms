@@ -177,6 +177,9 @@
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
                               <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="341.59995117187486" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Text fx:id="foundUserText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="339.73675537109375" GridPane.columnIndex="1" GridPane.rowIndex="2" />
