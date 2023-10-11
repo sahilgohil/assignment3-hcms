@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -228,10 +229,16 @@ public class modifyUserController implements Initializable {
 
     @FXML
     private void genderMenuEvent(ActionEvent event) {
+        MenuItem selectedItem = (MenuItem) event.getSource();
+        String selected = selectedItem.getText();
+        genderField.setText(selected);
     }
 
     @FXML
     private void roleMenuEvent(ActionEvent event) {
+        MenuItem selectedItem = (MenuItem) event.getSource();
+        String selected = selectedItem.getText();
+        roleField.setText(selected);        
     }
 
 }
