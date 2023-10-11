@@ -91,10 +91,6 @@ public class SearchPatientBillController implements Initializable {
         }
         
     }
-
-    private void homeBtn(ActionEvent event) {
-        App.switchScene("medicalStaffHome.fxml");
-    }
     
     public void showError(boolean e,String msg)
     {

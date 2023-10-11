@@ -126,10 +126,6 @@ public class AddNewPatientController implements Initializable {
         }
     }
 
-    private void homeBtn(ActionEvent event) {
-        App.switchScene("medicalStaffHome.fxml");
-    }
-
     @FXML
     private void logoutBtn(ActionEvent event) {
         App.switchScene("loginPage.fxml");

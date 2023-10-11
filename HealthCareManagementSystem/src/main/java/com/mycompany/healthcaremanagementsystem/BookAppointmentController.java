@@ -200,11 +200,7 @@ public class BookAppointmentController implements Initializable {
         bookingForLabel.setVisible(show);
         bookingTimeLabel.setVisible(show);
     }
-
-    private void homeBtn(ActionEvent event) {
-        App.switchScene("medicalStaffHome.fxml");
-    }
-    
+   
     @FXML
         private void logOutBtn(ActionEvent event) {
             App.switchScene("loginPage.fxml");

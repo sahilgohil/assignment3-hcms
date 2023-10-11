@@ -75,10 +75,6 @@ public class SearchPatientController implements Initializable {
     private void updateUserEvent(ActionEvent event) {
         App.switchScene("updatePatient.fxml");
     }
-
-    private void homeBtn(ActionEvent event) {
-        App.switchScene("medicalStaffHome.fxml");
-    }
     
     public void showError(boolean e,String msg)
     {

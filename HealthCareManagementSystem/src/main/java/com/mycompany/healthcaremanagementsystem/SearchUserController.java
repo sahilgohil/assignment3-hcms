@@ -84,9 +84,4 @@ public class SearchUserController implements Initializable {
         error.setVisible(e);
     }
 
-    @FXML
-    private void homeBtn(ActionEvent event) {
-        App.switchScene("adminHome.fxml");
-    }
-
 }

@@ -28,11 +28,7 @@ public class ViewBillController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
-    private void homeBtnEvent(ActionEvent event) {
-        App.switchScene("medicalStaffHome.fxml");
-    }
+    } 
 
     @FXML
     private void logOutEvent(ActionEvent event) {
