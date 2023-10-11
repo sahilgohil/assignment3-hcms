@@ -143,7 +143,6 @@ public class createNewUserController implements Initializable {
         error.setVisible(e);
     }
 
-    @FXML
     private void homeBtn(ActionEvent event) {
         App.switchScene("adminHome.fxml");
     }
@@ -163,6 +162,16 @@ public class createNewUserController implements Initializable {
         passwordField.setText("");
         confirmPassField.setText("");
         roleMenu.setText("Select Role");
+    }
+
+    @FXML
+    private void createNewUserEvent(ActionEvent event) {
+        App.switchScene("createNewUser.fxml");
+    }
+
+    @FXML
+    private void modifyUserEvent(ActionEvent event) {
+        App.switchScene("searchUser.fxml");
     }
 
 }
