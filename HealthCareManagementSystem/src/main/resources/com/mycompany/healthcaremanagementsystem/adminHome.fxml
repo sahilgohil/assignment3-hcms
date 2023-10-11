@@ -1,16 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.healthcaremanagementsystem.adminHomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.healthcaremanagementsystem.adminHomeController">
    <children>
-      <Text fx:id="error" fill="RED" layoutX="217.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="363.19992675781236" />
-      <Label layoutX="265.0" layoutY="21.0" text="Admin Home" />
-      <Button layoutX="245.0" layoutY="122.0" mnemonicParsing="false" onAction="#createNewUserEvent" text="Create New User" />
-      <Button layoutX="243.0" layoutY="174.0" mnemonicParsing="false" onAction="#modifyUserEvent" text="Modify New User" />
-      <Button layoutX="472.0" layoutY="359.0" mnemonicParsing="false" onAction="#logoutEvent" prefHeight="26.0" prefWidth="108.0" text="Log Out" />
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="60.0" prefWidth="800.0" style="-fx-background-color: #003768;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="315.0" layoutY="16.0" text="Admin Home" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="678.0" layoutY="15.0" mnemonicParsing="false" onAction="#logoutEvent" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #c1d82f;" text="Log Out" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="14.0" layoutY="13.0" text="HMCS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </top>
+         <left>
+            <VBox prefHeight="440.0" prefWidth="220.0" style="-fx-background-color: #1a4b77;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#createNewUserEvent" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #1a4b77; -fx-border-color: #003768;" text="Create New User" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#modifyUserEvent" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #1a4b77; -fx-border-color: #003768;" text="Search and Update User" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
    </children>
 </AnchorPane>
