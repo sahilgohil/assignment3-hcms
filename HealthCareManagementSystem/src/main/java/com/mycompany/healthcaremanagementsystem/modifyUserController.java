@@ -213,22 +213,25 @@ public class modifyUserController implements Initializable {
 
     @FXML
     private void logoutBtn(ActionEvent event) {
+        App.switchScene("loginPage.fxml");
     }
 
     @FXML
     private void createNewUserEvent(ActionEvent event) {
+        App.switchScene("createNewUser.fxml");
     }
 
     @FXML
     private void modifyUserEvent(ActionEvent event) {
-    }
-
-    @FXML
-    private void roleMenuEvent(ActionEvent event) {
+        App.switchScene("searchUser.fxml");
     }
 
     @FXML
     private void genderMenuEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void roleMenuEvent(ActionEvent event) {
     }
 
 }
