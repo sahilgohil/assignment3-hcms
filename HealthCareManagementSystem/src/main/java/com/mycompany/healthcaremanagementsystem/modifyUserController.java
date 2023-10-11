@@ -4,12 +4,15 @@ package com.mycompany.healthcaremanagementsystem;
 import Model.User;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.MenuButton;
 
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -19,7 +22,6 @@ import javafx.scene.text.Text;
  * @author sahil
  */
 public class modifyUserController implements Initializable {
-
 
     @FXML
     private TextField firstnameField;
@@ -34,19 +36,18 @@ public class modifyUserController implements Initializable {
     @FXML
     private Text error;
     @FXML
-    private TextField genderField;
+    private MenuButton genderField;
     @FXML
-    private TextField dateOfBirthField;
+    private DatePicker dateOfBirthField;
     @FXML
-    private TextField roleField;
+    private MenuButton roleField;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }      
 
     @FXML
     private void deleteUserEvent(ActionEvent event) {
@@ -66,24 +67,15 @@ public class modifyUserController implements Initializable {
     }
 
     @FXML
-    private void adminHomeEvent(ActionEvent event) {
-        
-            App.switchScene("adminHome.fxml");
-       
-    }
-
-
-
-    @FXML
     private void updateUserBtn(ActionEvent event) {
         String firstName = firstnameField.getText();
         String lastName = lastnameField.getText();
         String gender = genderField.getText();
-        String dateOfBirth= dateOfBirthField.getText();
-            String email = emailField.getText();
-            String password = passwordField.getText();
-            String confPass = confirmPassField.getText();
-            String role = roleField.getText();
+        LocalDate dateOfBirth= dateOfBirthField.getValue();
+        String email = emailField.getText();
+        String password = passwordField.getText();
+        String confPass = confirmPassField.getText();
+        String role = roleField.getText();
         if(firstName.isBlank())
         {
             showError(true, "FirstName can not be blank");
@@ -96,7 +88,7 @@ public class modifyUserController implements Initializable {
         {
             showError(true, "Gender can not be blank");
         }
-        else if(dateOfBirth.isBlank())
+        else if(dateOfBirth == null)
         {
             showError(true, "Date of birth can not be blank");
         }
@@ -123,7 +115,19 @@ public class modifyUserController implements Initializable {
         else{
             boolean dobCorrect = false;
             java.sql.Date sqlDateOfBirth = null;
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            
+            if (dateOfBirth != null) {
+                try {
+                    sqlDateOfBirth = java.sql.Date.valueOf(dateOfBirth);
+                    dobCorrect = true;
+                } catch (Exception e) {
+                    showError(true, "Date Of Birth format is incorrect. Please use 'YYYY-MM-DD' Format");
+                }
+            } else {
+                showError(true, "Date of birth can not be blank");
+            }
+            //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            /**
             try {
                   java.util.Date utilDate = dateFormat.parse(dateOfBirth);
                         sqlDateOfBirth = new java.sql.Date(utilDate.getTime());
@@ -131,6 +135,7 @@ public class modifyUserController implements Initializable {
             } catch (Exception e) {
                        showError(true, "Date Of Birth format is incorrect. Please use 'YYYY-MM-DD' Format");
             }
+            **/
             if(dobCorrect)
             {
                 if(!role.equalsIgnoreCase("admin") && !role.equalsIgnoreCase("medical staff"))
@@ -173,15 +178,15 @@ public class modifyUserController implements Initializable {
         return confirmPassField;
     }
 
-    public TextField getGenderField() {
+    public MenuButton getGenderField() {
         return genderField;
     }
 
-    public TextField getDateOfBirthField() {
+    public DatePicker getDateOfBirthField() {
         return dateOfBirthField;
     }
 
-    public TextField getRoleField() {
+    public MenuButton getRoleField() {
         return roleField;
     }
     
@@ -204,6 +209,26 @@ public class modifyUserController implements Initializable {
 
                 }
             });
+    }
+
+    @FXML
+    private void logoutBtn(ActionEvent event) {
+    }
+
+    @FXML
+    private void createNewUserEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void modifyUserEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void roleMenuEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void genderMenuEvent(ActionEvent event) {
     }
 
 }
