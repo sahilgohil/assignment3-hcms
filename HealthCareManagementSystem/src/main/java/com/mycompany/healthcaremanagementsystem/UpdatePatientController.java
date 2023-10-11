@@ -177,22 +177,27 @@ public class UpdatePatientController implements Initializable {
 
     @FXML
     private void addPatientEvent(ActionEvent event) {
+        App.switchScene("addNewPatient.fxml");
     }
 
     @FXML
     private void updatePatientEvent(ActionEvent event) {
+        App.switchScene("searchPatient.fxml");
     }
 
     @FXML
     private void scheduleAppointmentEvent(ActionEvent event) {
+        App.switchScene("bookAppointment.fxml");
     }
 
     @FXML
     private void viewBillsEvent(ActionEvent event) {
+        App.switchScene("searchPatientBill.fxml");
     }
 
     @FXML
     private void viewAnalyticsDashboardEvent(ActionEvent event) {
+        App.switchScene("viewAnalytics.fxml");
     }
 
 }

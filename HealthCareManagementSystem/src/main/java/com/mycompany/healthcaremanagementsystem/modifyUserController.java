@@ -205,10 +205,5 @@ public class modifyUserController implements Initializable {
                 }
             });
     }
-    
-
-
-    
-    
 
 }

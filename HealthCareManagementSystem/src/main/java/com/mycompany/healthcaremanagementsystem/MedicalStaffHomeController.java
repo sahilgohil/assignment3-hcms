@@ -49,6 +49,7 @@ public class MedicalStaffHomeController implements Initializable {
 
     @FXML
     private void searchPatientEvent(ActionEvent event) {
+        
     }
 
     @FXML

@@ -26,7 +26,6 @@ public class ViewAnalyticsController implements Initializable {
         // TODO
     }    
     
-    @FXML
     private void homeBtnEvent(ActionEvent event) {
         App.switchScene("medicalStaffHome.fxml");
     }
@@ -39,7 +38,30 @@ public class ViewAnalyticsController implements Initializable {
     public TextArea getAnalyticsArea() {
         return analyticsArea;
     }
-    
-    
 
+    @FXML
+    private void addPatientEvent(ActionEvent event) {
+        App.switchScene("addNewPatient.fxml");
+    }
+
+    @FXML
+    private void updatePatientEvent(ActionEvent event) {
+        App.switchScene("searchPatient.fxml");
+    }
+
+    @FXML
+    private void scheduleAppointmentEvent(ActionEvent event) {
+        App.switchScene("bookAppointment.fxml");
+    }
+
+    @FXML
+    private void viewBillsEvent(ActionEvent event) {
+        App.switchScene("searchPatientBill.fxml");
+    }
+
+    @FXML
+    private void viewAnalyticsDashboardEvent(ActionEvent event) {
+        App.switchScene("viewAnalytics.fxml");
+    }
+    
 }
