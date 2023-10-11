@@ -28,6 +28,8 @@ public class SearchUserController implements Initializable {
     private Text foundUserText;
     @FXML
     private Button updateBtn;
+    @FXML
+    private Text error1;
     /**
      * Initializes the controller class.
      */
@@ -78,10 +80,19 @@ public class SearchUserController implements Initializable {
     }
 
     
-        public void showError(boolean e,String msg)
+    public void showError(boolean e,String msg)
     {
         error.setText(msg);
         error.setVisible(e);
     }
 
+    @FXML
+    private void createNewUserEvent(ActionEvent event) {
+        App.switchScene("createNewUser.fxml");
+    }
+
+    @FXML
+    private void modifyUserEvent(ActionEvent event) {
+        App.switchScene("searchUser.fxml");
+    }
 }
