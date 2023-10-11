@@ -19,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 /**
  * FXML Controller class
@@ -50,6 +51,8 @@ public class BookAppointmentController implements Initializable {
     private Label bookingDateLabel;
     @FXML
     private Label bookingTimeLabel;
+    @FXML
+    private Text error1;
     
     /**
      * Initializes the controller class.
@@ -106,28 +109,28 @@ public class BookAppointmentController implements Initializable {
             
             if(bookingReason.isBlank() || bookingReason.equalsIgnoreCase("Select Reason"))
             {
-                showError(true, "Please Choose a Booking reason");
+                showError1(true, "Please Choose a Booking reason");
             }
             else if(bookingDateField.getValue() == null)
             {
-                showError(true, "Booking date is required");
+                showError1(true, "Booking date is required");
             }
             else if(bookingTime.isBlank() || bookingTime.equalsIgnoreCase("Select Time"))
             {
-                showError(true, "Please Choose Booking Time");
+                showError1(true, "Please Choose Booking Time");
             }
             else{
-                showError(false, "");
+                showError1(false, "");
                 bookingDate = java.sql.Date.valueOf(bookingDateField.getValue());
                 
                 Appointment a = new Appointment(-1, bookingDate, bookingReason, bookingTime, App.getSearchedPatient().getPatientId());
                 
                 if(App.getDb().searchForExistingAppointment(a))
                 {
-                    showError(true, "The Selected Appointment Slot is already booked please select another date or time.");
+                    showError1(true, "The Selected Appointment Slot is already booked please select another date or time.");
                 }
                 else{
-                    showError(false, "");
+                    showError1(false, "");
 
                     a = App.getDb().addAppointment(a);
 
@@ -153,7 +156,7 @@ public class BookAppointmentController implements Initializable {
             }
         }
         else{
-            showError(true, "Please search the patient first");
+            showError1(true, "Please search the patient first");
         }
     }
     
@@ -161,6 +164,12 @@ public class BookAppointmentController implements Initializable {
     {
         error.setText(msg);
         error.setVisible(e);
+    }
+    
+    public void showError1(boolean e,String msg)
+    {
+        error1.setText(msg);
+        error1.setVisible(e);
     }
 
     @FXML
@@ -192,7 +201,6 @@ public class BookAppointmentController implements Initializable {
         bookingTimeLabel.setVisible(show);
     }
 
-    @FXML
     private void homeBtn(ActionEvent event) {
         App.switchScene("medicalStaffHome.fxml");
     }
@@ -201,6 +209,27 @@ public class BookAppointmentController implements Initializable {
     private void logOutBtn(ActionEvent event) {
         App.switchScene("loginPage.fxml");
     }
+
+    @FXML
+    private void addPatientEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void updatePatientEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void scheduleAppointmentEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void viewBillsEvent(ActionEvent event) {
+    }
+
+    @FXML
+    private void viewAnalyticsDashboardEvent(ActionEvent event) {
+    }
+
 
 
 }
