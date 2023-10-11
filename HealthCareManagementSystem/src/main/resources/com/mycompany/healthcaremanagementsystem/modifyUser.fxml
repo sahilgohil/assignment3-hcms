@@ -142,7 +142,7 @@
                                           <Insets top="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <MenuButton fx:id="genderField" mnemonicParsing="false" onAction="#genderMenuEvent" prefHeight="26.0" prefWidth="150.0" text="Select Gender" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <MenuButton fx:id="genderField" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Select Gender" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <items>
                                           <MenuItem mnemonicParsing="false" onAction="#genderMenuEvent" text="Male" />
                                           <MenuItem mnemonicParsing="false" onAction="#genderMenuEvent" text="Female" />
@@ -193,7 +193,7 @@
                                           <Insets top="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <MenuButton fx:id="roleField" mnemonicParsing="false" onAction="#roleMenuEvent" prefHeight="26.0" prefWidth="150.0" text="Select Role" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <MenuButton fx:id="roleField" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Select Role" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <items>
                                           <MenuItem mnemonicParsing="false" onAction="#roleMenuEvent" text="Admin" />
                                           <MenuItem mnemonicParsing="false" onAction="#roleMenuEvent" text="Medical Staff" />
