@@ -258,6 +258,7 @@
                                     <RowConstraints />
                                     <RowConstraints />
                                     <RowConstraints minHeight="10.0" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
                                  </rowConstraints>
                                  <children>
                                     <Label text="Medical History:">
@@ -270,25 +271,9 @@
                                           <Insets left="5.0" right="10.0" top="10.0" />
                                        </GridPane.margin>
                                     </TextArea>
-                                    <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="410.93670654296875" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <Button mnemonicParsing="false" onAction="#updatePatientBtn" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #c1d82f;" text="Update Patient" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <GridPane.margin>
-                                          <Insets left="10.0" right="10.0" />
-                                       </GridPane.margin>
-                                    </Text>
-                                 </children>
-                              </GridPane>
-                              <GridPane>
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.20001220703125" minWidth="10.0" prefWidth="419.60003662109375" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="282.79998779296875" minWidth="10.0" prefWidth="160.39996337890625" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <Button mnemonicParsing="false" onAction="#updatePatientBtn" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #c1d82f;" text="Update Patient" textFill="WHITE" GridPane.columnIndex="1">
-                                       <GridPane.margin>
-                                          <Insets bottom="10.0" right="10.0" />
+                                          <Insets left="5.0" top="10.0" />
                                        </GridPane.margin>
                                        <font>
                                           <Font name="System Bold" size="14.0" />
@@ -297,6 +282,11 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Button>
+                                    <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="410.93670654296875" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" right="10.0" />
+                                       </GridPane.margin>
+                                    </Text>
                                  </children>
                               </GridPane>
                            </children>
