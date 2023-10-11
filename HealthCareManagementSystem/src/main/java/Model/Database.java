@@ -429,7 +429,7 @@ public class Database {
         muc.getFirstnameField().setText(u.getFirstName());
         muc.getLastnameField().setText(u.getLastName());
         muc.getGenderField().setText(u.getGender());
-        muc.getDateOfBirthField().setText(u.getDateOfBirth().toString());
+        muc.getDateOfBirthField().setValue(u.getDateOfBirth().toLocalDate());
         muc.getEmailField().setText(u.getEmail());
         muc.getPasswordField().setText(u.getPassword());
         muc.getConfirmPassField().setText(u.getPassword());
