@@ -1,34 +1,274 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.healthcaremanagementsystem.modifyUserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.healthcaremanagementsystem.modifyUserController">
    <children>
-      <Label layoutX="251.0" layoutY="23.0" text="Modify User" />
-      <Label layoutX="159.0" layoutY="69.0" text="First Name:" />
-      <Label layoutX="159.0" layoutY="103.0" text="Last Name:" />
-      <Label layoutX="176.0" layoutY="142.0" text="Gender:" />
-      <Label layoutX="147.0" layoutY="182.0" text="Date Of Birth:" />
-      <Label layoutX="145.0" layoutY="222.0" text="Email Address:" />
-      <Label layoutX="162.0" layoutY="263.0" text="Password:" />
-      <Label layoutX="189.0" layoutY="351.0" text="Role:" />
-      <TextField fx:id="firstnameField" layoutX="246.0" layoutY="65.0" />
-      <TextField fx:id="lastnameField" layoutX="246.0" layoutY="99.0" />
-      <TextField fx:id="emailField" layoutX="246.0" layoutY="218.0" />
-      <TextField fx:id="passwordField" layoutX="246.0" layoutY="259.0" />
-      <Button layoutX="247.0" layoutY="385.0" mnemonicParsing="false" onAction="#updateUserBtn" prefHeight="26.0" prefWidth="150.0" text="Update" />
-      <Label layoutX="118.0" layoutY="309.0" text="Confirm Password:" />
-      <TextField fx:id="confirmPassField" layoutX="246.0" layoutY="305.0" />
-      <Text fx:id="error" fill="RED" layoutX="247.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="328.5367431640625" />
-      <TextField fx:id="genderField" layoutX="247.0" layoutY="138.0" />
-      <TextField fx:id="dateOfBirthField" layoutX="246.0" layoutY="178.0" />
-      <TextField fx:id="roleField" layoutX="246.0" layoutY="347.0" />
-      <Button layoutX="525.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteUserEvent" prefHeight="26.0" prefWidth="60.0" text="Delete" />
-      <Button layoutX="487.0" layoutY="470.0" mnemonicParsing="false" onAction="#adminHomeEvent" prefHeight="26.0" prefWidth="98.0" text="Admin Home" />
-      <Text fx:id="error" fill="RED" layoutX="118.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="460.53668212890625" />
+      <BorderPane layoutX="30.0" layoutY="30.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="60.0" prefWidth="800.0" style="-fx-background-color: #003768;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="315.0" layoutY="16.0" text="Admin Home" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="678.0" layoutY="15.0" mnemonicParsing="false" onAction="#logoutBtn" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #c1d82f;" text="Log Out" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="14.0" layoutY="13.0" text="HMCS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </top>
+         <left>
+            <VBox prefHeight="440.0" prefWidth="220.0" style="-fx-background-color: #1a4b77;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#createNewUserEvent" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #1a4b77; -fx-border-color: #003768;" text="Create New User" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#modifyUserEvent" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #1a4b77; -fx-border-color: #003768;" text="Search and Update User" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <Pane prefHeight="40.0" style="-fx-border-color: #ccc;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Update User Details">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox prefWidth="580.0">
+                           <children>
+                              <GridPane prefWidth="580.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="First Name:">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="firstnameField" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Label text="Last Name:" GridPane.columnIndex="2">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="lastnameField" GridPane.columnIndex="3">
+                                       <GridPane.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Label text="Gender:" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <MenuButton fx:id="genderField" mnemonicParsing="false" onAction="#genderMenuEvent" prefHeight="26.0" prefWidth="150.0" text="Select Gender" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" onAction="#genderMenuEvent" text="Male" />
+                                          <MenuItem mnemonicParsing="false" onAction="#genderMenuEvent" text="Female" />
+                                          <MenuItem mnemonicParsing="false" onAction="#genderMenuEvent" text="Other" />
+                                       </items>
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </MenuButton>
+                                    <Label text="Date Of Birth:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <DatePicker fx:id="dateOfBirthField" prefHeight="26.0" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <Label text="Email Address:" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Label text="Password:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="passwordField" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Label text="Role:" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <MenuButton fx:id="roleField" mnemonicParsing="false" onAction="#roleMenuEvent" prefHeight="26.0" prefWidth="150.0" text="Select Role" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" onAction="#roleMenuEvent" text="Admin" />
+                                          <MenuItem mnemonicParsing="false" onAction="#roleMenuEvent" text="Medical Staff" />
+                                       </items>
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                    </MenuButton>
+                                    <Label text="Confirm Password:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="confirmPassField" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </GridPane>
+                              <GridPane prefWidth="580.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.20001220703125" minWidth="10.0" prefWidth="141.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="436.0" minWidth="10.0" prefWidth="110.60000000000002" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="436.0" minWidth="10.0" prefWidth="320.19999999999993" />
+                                 </columnConstraints>
+                                 <children>
+                                    <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="409.33685302734375" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Button mnemonicParsing="false" onAction="#updateUserBtn" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #c1d82f;" text="Update" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" top="10.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#deleteUserEvent" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets top="10.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints minHeight="10.0" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
