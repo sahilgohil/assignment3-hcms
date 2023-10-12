@@ -127,7 +127,7 @@ public class BookAppointmentController implements Initializable {
                 
                 if(App.getDb().searchForExistingAppointment(a))
                 {
-                    showError1(true, "The Selected Appointment Slot is already booked please select another date or time.");
+                    showError1(true, "Appointment Slot is already booked please select another date or time.");
                 }
                 else{
                     showError1(false, "");

@@ -23,6 +23,8 @@ public class App extends Application {
     private static User searchedUser;
     private static Patient searchedPatient;
     public static boolean isDatabaseExist = false;
+    private static final String MYSQLUSERNAME = "root";
+    private static final String MYSQLPASSWORD = "15896";
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -39,7 +41,7 @@ public class App extends Application {
 
             // Database setup (if not already created)
             if (!isDatabaseExist) {
-                db = new Database("root", "P@55W0Rd1995");
+                db = new Database(MYSQLUSERNAME, MYSQLPASSWORD);
                 isDatabaseExist = true;
             }
 
