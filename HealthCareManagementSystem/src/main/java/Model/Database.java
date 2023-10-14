@@ -616,12 +616,11 @@ public class Database {
         averageIncome = totalRevenue/totalPatient;
         
         LocalDate now = LocalDate.now();
+     
         vac.getAnalyticsArea().appendText("							HealthLink Hospital				Today Date: "+now.toString()+"\n" +
 "--------------------------------------------------------------------------------------------------------------\n" +
 "\n" +
 "							\n" +
-"\n" +
-"--------------------------------------------------------------------------------------------------------------\n" +
 "\n" +
 "Overall Revenue\n" +
 "\n" +

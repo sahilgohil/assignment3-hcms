@@ -23,6 +23,8 @@ public class App extends Application {
     private static User searchedUser;
     private static Patient searchedPatient;
     public static boolean isDatabaseExist = false;
+    
+    // database username and password that need to be changed as per the user's mysql username and password
     private static final String MYSQLUSERNAME = "root";
     private static final String MYSQLPASSWORD = "15896";
 
