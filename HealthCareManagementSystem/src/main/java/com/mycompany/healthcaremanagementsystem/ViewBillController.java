@@ -6,6 +6,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -66,6 +68,22 @@ public class ViewBillController implements Initializable {
     @FXML
     private void viewAnalyticsDashboardEvent(ActionEvent event) {
         App.switchScene("viewAnalytics.fxml");
+    }
+
+    @FXML
+    private void printPatientBillEvent(ActionEvent event) {
+            App.getDb().printPatientBill();
+                    // Display a success alert
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Health Care Management System");
+            alert.setHeaderText("Success");
+            alert.setContentText("Bill has been printed for: \n\nPatient-ID: "+App.getSearchedPatient().getPatientId());
+            alert.getButtonTypes().setAll(ButtonType.OK);
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+
+                }
+            });
     }
     
 }

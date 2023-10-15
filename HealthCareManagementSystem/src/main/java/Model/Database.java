@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.List;
 
 public class Database {
@@ -20,6 +21,8 @@ public class Database {
     private String username;
     private String password;
     private Connection c;
+    private Patient patient;
+    private String billString;
     
     // create the database healthlink
     public Database(String username, String password)
@@ -559,7 +562,8 @@ public class Database {
         vbc.getBillArea().appendText("------------------------------------------------------\n"+""
                 + "Grand Total: $ "+grandTotal);
 
-        
+        billString = vbc.getBillArea().getText();
+        patient = p;
     }
     
     public void setAnalyticsView(ViewAnalyticsController vac)
@@ -672,6 +676,18 @@ public class Database {
 "\n" +
 "                                   Thank You For Using Health Care Management System");
         
+    }
+    
+    public void printPatientBill()
+    {
+        try {
+            String billName = patient.getFirstname()+" "+patient.getLastname();
+            Formatter f = new Formatter(billName);
+            f.format(billString);
+            f.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
  
    
