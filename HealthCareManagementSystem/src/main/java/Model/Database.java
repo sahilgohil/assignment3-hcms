@@ -49,9 +49,10 @@ public class Database {
        setAutoIncrement();
        LocalDate date = LocalDate.now();
         
-       User admin = new User(-1,"admin", "admin", "male", java.sql.Date.valueOf(date), "admin@mail.com", "a", "Admin");
-       User medicalStaff = new User(-1,"Medical", "Staff", "male", java.sql.Date.valueOf(date), "medicalStaff@mail.com", "a", "Medical Staff");
-       Patient p = new Patient(-1, "Patient", "Patient", "Male", java.sql.Date.valueOf(date), "123 main Street", "123 049 0599", "9867 87362 4", "None");
+       User admin = new User(-1,"Admin", "Admin", "male", java.sql.Date.valueOf(date), "admin@mail.com", "a", "Admin");
+       User medicalStaff = new User(-1,"Stephen", "Smith", "male", java.sql.Date.valueOf(date), "medicalStaff@mail.com", "a", "Medical Staff");
+       Patient p = new Patient(-1, "Roshan", "Shahi", "Male", java.sql.Date.valueOf(date), "123 main Street", "123 049 0599", "9867 87362 4", "None");
+       
        insertAdmin(admin);
        insertAdmin(medicalStaff);
         addNewPatient(p);
